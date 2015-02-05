@@ -18,6 +18,16 @@ from flask import render_template, request, redirect, url_for
 def home():
     """Render website's home page."""
     return render_template('home.html')
+  
+  
+@app.route('/profile')
+def profile():
+  return render_template("profile.html",time=timeinfo())
+
+def timeinfo():
+  import time
+  sihn= time.strftime("%a, %d %b %Y")
+  return sihn
 
 
 @app.route('/about/')
